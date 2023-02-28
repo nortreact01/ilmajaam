@@ -11,6 +11,9 @@ function App() {
     const result = await fetch(paring)
     const andmed = await result.json()
     console.log(andmed)
+    setAktiivne(1)
+    asendaIlmaAndmed(andmed, 1)
+  
   }
   const [ilmaAndmed, setIlmaAndmed] = useState([
     {
@@ -33,6 +36,15 @@ function App() {
     },
   ])
 
+  const asendaIlmaAndmed = (andmed, index) => {
+    setIlmaAndmed((eelmine) => {
+      const uus = [...eelmine]
+      uus[index].andmed = andmed
+      return uus
+    })
+  }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {laeIlmaAndmed()}, [])
 
   return (
