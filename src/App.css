@@ -19,3 +19,20 @@ body {
 .leht .asukoht {
   width: 30%;
 }
+
+.nav_row {
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+.nav_row.aktiivne {
+  color: darkblue;
+  background-color: lightgreen;
+}
+
+.navigatsioonipaan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
