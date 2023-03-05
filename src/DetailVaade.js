@@ -1,10 +1,11 @@
 function DetailVaade({koht}) {
-    if (!koht.andmed) {
+
+    if (!koht || !koht.andmed) {
         return <div>Laen ...</div>
     }
     
     return (
-        <div>
+        <div className="detail-vaade">
             <h1>{koht.nimi}</h1>
             <div>
                 <div>Aeg: {koht.andmed.current_weather.time}</div>

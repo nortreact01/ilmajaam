@@ -36,3 +36,46 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.detail-vaade,
+.lisa-asukoht {
+  margin-left: 30px;
+  min-height: 500px;
+}
+.lisa-asukoht-vorm input,
+.lisa-asukoht-vorm button {
+  margin-top: 5px;
+}
+
+.lisa-asukoht-vorm .koordinaadid {
+  width: 30px;
+}
+
+.m-left-10 {
+  margin-left: 10px;
+}
+
+.nupp {
+  background-color: white;
+  border-width: 0px;
+  border-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nupp.ok-nupp {
+  color: blue;
+}
+
+.nupp.ok-nupp:active {
+  color: lightblue;
+}
+
+.nupp.katkesta-nupp {
+  color: red;
+}
+
+.nupp.katkesta-nupp:active {
+  color: lightcoral;
+}

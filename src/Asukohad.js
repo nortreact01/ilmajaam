@@ -24,7 +24,7 @@ function Asukohad({ilmaAndmed, aktiivne, muudaAktiivset, setAvatudDetail}) {
                 )}
             )}
             </div>
-            <div onClick={() => {setAvatudDetail('LisaAsukoht')}}>Lisa</div>
+            <div className="nupp" onClick={() => {setAvatudDetail('LisaAsukoht')}}>Lisa</div>
         </div>
     )
 }

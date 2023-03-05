@@ -32,6 +32,11 @@ function App() {
     //lisa asukohtObj ilmaAndmed massiivi funktsiooni setIlmaAndmed abil. Kasuta parameeterfunktsiooni
     //muuda muutuja aktiivne väärtust nii et see oleks võrdne ilmaAndmete massiivi pikkusega + 1
     //muuda muutuja avatudDetail väärtust nii et ilma aktiivse ilma andmed oleksid näha
+    setIlmaAndmed((eelmine) => {
+      const uus = [...eelmine, asukohtObj]
+      return uus
+    })
+    muudaAktiivset(ilmaAndmed.length)
   }
 
   const [ilmaAndmed, setIlmaAndmed] = useState([
@@ -62,6 +67,8 @@ function App() {
 
   useEffect(() => {laeIlmaAndmed()}, [aktiivne])
 
+  //useEffect(() => {muudaAktiivset(ilmaAndmed.length)}, [ilmaAndmed])
+
   return (
     <div className="konteiner">
       <h1>Ilmajaam</h1>
@@ -73,7 +80,12 @@ function App() {
           setAvatudDetail={setAvatudDetail}
         />
         { avatudDetail === 'DetailVaade' && <DetailVaade koht={ilmaAndmed[aktiivne]} />}
-        { avatudDetail === 'LisaAsukoht' && <LisaAsukoht lisaUusAsukoht={lisaUusAsukoht} />}
+        { avatudDetail === 'LisaAsukoht' && 
+          <LisaAsukoht 
+            lisaUusAsukoht={lisaUusAsukoht}
+            muudaAktiivset={muudaAktiivset}
+          />
+        }
       </div>
     </div>
   );
